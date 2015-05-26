@@ -2,7 +2,7 @@
 
 /*
   Plugin Name: Simple Membership MailChimp Integration
-  Version: v1.0
+  Version: v1.1
   Plugin URI: https://simple-membership-plugin.com/
   Author: smp7, wp.insider
   Author URI: https://simple-membership-plugin.com/
@@ -17,7 +17,7 @@ define('SWPM_MAILCHIMP_CONTEXT', 'swpm_mailchimp');
 include_once('swpm-mailchimp-admin-menu.php');
 include_once('swpm-mailchimp-action.php');
 
-add_action('init', 'swpm_mailchimp_addon_init');
+add_action('plugins_loaded', 'swpm_mailchimp_addon_init');
 
 function swpm_mailchimp_addon_init() {
     if (!class_exists('SimpleWpMembership')) {
@@ -45,7 +45,7 @@ function swpm_mailchimp_admin_add_membership_level_ui($to_filter) {
 }
 
 function swpm_mailchimp_admin_edit_membership_level_ui($to_filter, $id) {
-    $fields = BMembershipLevelCustom::get_value_by_context($id, SWPM_MAILCHIMP_CONTEXT);
+    $fields = SwpmMembershipLevelCustom::get_value_by_context($id, SWPM_MAILCHIMP_CONTEXT);
     $swpm_mailchimp_list_name = isset($fields['swpm_mailchimp_list_name']) ? $fields['swpm_mailchimp_list_name']['meta_value'] : '';
     return $to_filter . '<tr>
             <th scope="row">MailChimp List Name</th>
