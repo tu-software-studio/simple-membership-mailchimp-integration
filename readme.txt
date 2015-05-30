@@ -4,7 +4,7 @@ Donate link: https://simple-membership-plugin.com/
 Tags: mailchimp, autoresponder, email, signup, optin, member, members, membership, access, subscribe
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 
 An addon for the simple membership plugin to signup members to your MailChimp list
@@ -35,8 +35,11 @@ None
 
 == Changelog ==
 
-= 1.0 =
-* First commit to wordpress.org
+= 1.2 =
+* Added integration with the form builder addon.
+
+= 1.1 =
+* Minor architectural improvements.
 
 == Upgrade Notice ==
 
