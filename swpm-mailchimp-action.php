@@ -88,6 +88,7 @@ function swpm_do_mailchimp_signup_fb($data) {
     SwpmLog::log_simple_debug("Mailchimp integration addon. After registration hook. Debug data: " . $mc_list_name . "|" . $email . "|" . $first_name . "|" . $last_name, true);
 
     if (empty($mc_list_name)) {//This level has no mailchimp list name specified for it
+        SwpmLog::log_simple_debug("This membership level (".$membership_level.") has no mailchimp list name specified for it. Mailchimp signup won't be performed.", true);
         return;
     }
 
