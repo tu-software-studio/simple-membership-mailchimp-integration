@@ -3,6 +3,8 @@
 add_action('swpm_front_end_registration_complete', 'swpm_do_mailchimp_signup');//For core plugin signup
 add_action('swpm_front_end_registration_complete_fb', 'swpm_do_mailchimp_signup_fb');//For form builder addon signup
 
+add_action('swpm_admin_registration_complete', 'swpm_do_mailchimp_signup');  // For core plugin admin create.
+
 function swpm_do_mailchimp_signup() {
     $first_name = strip_tags($_POST['first_name']);
     $last_name = strip_tags($_POST['last_name']);
